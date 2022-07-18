@@ -23,5 +23,16 @@
 * [Utilizando gettype conseguimos descobrir o tipo de uma variável](#)
 
 ## Aula 03 - Trabalhando com texto
-* [Uma variável guarda um valor](#)
-* [Uma variável tem um $ na frente e para atribuir um valor usamos =](#)
+* [Para concatenar uma string com uma outra variável usamos o . (ponto)](#)
+* [Podemos definir uma string com aspas simples(') ou duplas(")](#)
+* [Para interpretar um valor da variável ou caractere especial dentro da string devemos usar aspas duplas](#)
+* [caracteres especias são: Nova linha: \n ou \r , Tab: \t](#)
+* [PHP possui uma constante para indicar uma quebra de linha: PHP_EOL](#)
+
+## Aula 04 - Tomando decisões
+* [Podemos tomar uma decisão no código através do if, elseif e else](#)
+* [if e elseif vão avaliar uma condição, se for verdadeira executam o bloco associado](#)
+* [O if é o primeiro comando, elseif e else são opcionais](#)
+* [O bloco elseif sempre precisa de um if antes](#)
+* [O bloco else sempre precisa de um if ou elseif antes -O bloco else só executa se nenhuma das condições anteriores forem verdadeiras](#)
+* [Através do && (AND lógico) e do || (OR lógico) podemos avaliar mais de uma condição](#)
