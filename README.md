@@ -9,3 +9,5 @@
   * [2. Variáveis e tipos](#)
   * [3. Trabalhando com texto](#)
   * [4. Tomando decisões](#)
+  * [5. Repetindo ações](#)
+  * [6. Desafios](#)
