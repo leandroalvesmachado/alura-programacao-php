@@ -45,3 +45,10 @@
 * [Dentro do bloco do laço podemos pular uma interação com o comando continue](#)
 * [Com o comando break podemos sair do laço](#)
 * [A variável contador normalmente se chama i](#)
+
+## Aula 06 - Desafios
+* [Nesse curso aprendemos a sintaxe básica do PHP e conhecemos os principais recursos. Vimos a instalação e execução na linha de comando.](#)
+* [Você deve conhecer os tipos básicos como integer, double, boolean ou string. Aliás, falamos muito sobre strings e aprendemos a diferença entre "" e ''. Para concatenar strings usamos o ponto (.) e dentro das "" podemos usar variáveis.](#)
+* [O uso das variáveis foi um outro tópico importante. Entendemos a tipagem dinâmica e a declaração de variáveis.](#)
+* [Para tomar decisões usamos o famoso if que recebe uma condição. O if pode ser encadeado com elseif ou else apenas.](#)
+* [Para repetir um bloco conhecemos os laços como while e for.](#)
