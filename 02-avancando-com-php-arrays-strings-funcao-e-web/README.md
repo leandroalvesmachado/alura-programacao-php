@@ -33,10 +33,18 @@
 * [E_ERROR, PHP dá erro e para a execução do programa](#)
 
 ## Aula 05 - Referências e mais listas
-* [](#)
-* [](#)
-* [](#)
-* [](#)
-* [](#)
-* [](#)
-* [](#)
+* [Nessa aula aprendemos sobre a passagem do parâmetro por valor ou por referência. O padrão do PHP é passar o parâmetro por valor, isto é fazer uma cópia do parâmetro. Quando usamos a passagem por referência temos acesso aos valores da variável original, pois passamos a referência apenas (não é feito nenhuma cópia).](#)
+* [Para usar a passagem de referência basta colocar o caracter & na frente da variável.](#)
+* [Voltamos a falar também sobre listas e como pegar vários elementos de uma vez, só usando a função list(..)](#)
+* [list($idadeVinicius, $idadeJoao, $idadeMaria) = $idadeList;](#)
+
+## Aula 06 - Introdução do PHP na Web
+* [precisamos de um servidor para programar na web](#)
+* [PHP já tem um servidor embutido](#)
+* [o comando para rodar o servidor é: php -S localhost:8080](#)
+* [a web sempre funciona no modelo de comunicação requisição e resposta: o protocolo da web se chama HTTP (Hyper Text Transfer Protocol)](#)
+* [as páginas web são construídas com a linguagem de marcação HTML, o navegador entende HTML](#)
+* [podemos misturar código PHP com código HTML: assim podemos criar HTML dinamicamente](#)
+* [para tal é preciso demarcar o código PHP, abrindo e fechando a tag PHP: <?php ... ?>](#)
+* [para imprimir algum valor podemos usar <?= $valor ?>](#)
+* [existe muito código PHP da forma apresentada mas existem bibliotecas e frameworks que facilitam muito a criação de aplicações complexas aplicando boas práticas e padrões do mercado](#)
