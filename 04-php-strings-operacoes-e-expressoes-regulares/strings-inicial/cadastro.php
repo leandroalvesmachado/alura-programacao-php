@@ -1,6 +1,8 @@
 <?php
-// no terceiro parametro do explode, você informa a quantidade maxima de partes que a string será "quebrada"
-$nomeSobrenome = explode(" ", $_POST['nome'], 2);
+require 'autoload.php';
+
+$usuario = new \Alura\Usuario($_POST['nome']);
+$contato = new \Alura\Contato($_POST['email']);
 
 ?>
 <!DOCTYPE html>
@@ -17,9 +19,9 @@ $nomeSobrenome = explode(" ", $_POST['nome'], 2);
         <h1>Cadastro feito com sucesso.</h1>
         <p>Seguem os dados de sua conta:</p>
         <ul class="list-group">
-            <li class="list-group-item">Primeiro nome: <?= $nomeSobrenome[0] ?></li>
-            <li class="list-group-item">Sobrenome: <?= $nomeSobrenome[1] ?></li>
-            <li class="list-group-item">Usuário: </li>
+            <li class="list-group-item">Primeiro nome: <?= $usuario->getNome() ?></li>
+            <li class="list-group-item">Sobrenome: <?= $usuario->getSobrenome() ?></li>
+            <li class="list-group-item">Usuário: <?= $contato->getUsuario() ?></li>
             <li class="list-group-item">Senha: </li>
             <li class="list-group-item">Telefone: </li>
             <li class="list-group-item">Email: </li>
