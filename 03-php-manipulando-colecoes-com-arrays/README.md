@@ -17,4 +17,13 @@
 * [Aprendemos a buscar elementos em um array](#)
 
 ## Aula 04 - Manipulando arrays
-* [](#)
+* [Conhecemos funções que verificam as diferenças entre arrays](#)
+* [Aprendemos a pegar somente as chaves ou valores de um array](#)
+* [Vimos como unir arrays com array_merge e com +](#)
+* [Aprendemos a usar o operador …](#)
+
+## Aula 05 - Mais manipulações
+* [Aprendemos a adicionar itens em um array com [], array_push e array_unshift](#)
+* [Vimos como remover itens usando array_pop e array_shift](#)
+* [Conhecemos a função list e suas diferentes sintaxes](#)
+* [Aprendemos a usar as funções extract e compact](#)

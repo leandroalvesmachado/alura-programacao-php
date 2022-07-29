@@ -19,3 +19,17 @@
   * [4. Interpolação e Require](#)
   * [5. Referências e mais listas](#)
   * [6. Introdução do PHP na Web](#)
+
+- [PHP: manipulando coleções com Arrays](#)
+  * [1. Recapitulando](#)
+  * [2. Ordenando arrays](#)
+  * [3. Fazendo verificações](#)
+  * [4. Manipulando arrays](#)
+  * [5. Mais manipulações](#)
+
+- [PHP Strings: Operações e expressões regulares](#)
+  * [1. Iniciando o projeto](#)
+  * [2. Funções com strings e criando um autoloader](#)
+  * [3. Validações e eliminando espaços](#)
+  * [4. Validações com expressões regulares](#)
+  * [5. Melhorando a segurança e fazendo substituições](#)
