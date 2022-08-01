@@ -1,8 +1,13 @@
 <?php
 require 'autoload.php';
 
-$usuario = new \Alura\Usuario($_POST['nome']);
-$contato = new \Alura\Contato($_POST['email']);
+$usuario = new App\Alura\Usuario($_POST['nome'], $_POST['senha'], $_POST['genero']);
+$contato = new App\Alura\Contato(
+    $_POST['email'],
+    $_POST['endereco'],
+    $_POST['cep'],
+    $_POST['telefone']
+);
 
 ?>
 <!DOCTYPE html>
@@ -17,15 +22,15 @@ $contato = new \Alura\Contato($_POST['email']);
 <body>
     <div class="mx-5 my-5">
         <h1>Cadastro feito com sucesso.</h1>
-        <p>Seguem os dados de sua conta:</p>
+        <p><?php echo htmlspecialchars($usuario->getTratamento()) ?> , seguem os dados de sua conta:</p>
         <ul class="list-group">
-            <li class="list-group-item">Primeiro nome: <?= $usuario->getNome() ?></li>
-            <li class="list-group-item">Sobrenome: <?= $usuario->getSobrenome() ?></li>
-            <li class="list-group-item">Usuário: <?= $contato->getUsuario() ?></li>
-            <li class="list-group-item">Senha: </li>
-            <li class="list-group-item">Telefone: </li>
-            <li class="list-group-item">Email: </li>
-            <li class="list-group-item">Endereço: </li>
+            <li class="list-group-item">Primeiro nome: <?= htmlspecialchars($usuario->getNome()) ?></li>
+            <li class="list-group-item">Sobrenome: <?= htmlspecialchars($usuario->getSobrenome()) ?></li>
+            <li class="list-group-item">Usuário: <?= htmlspecialchars($contato->getUsuario()) ?></li>
+            <li class="list-group-item">Senha: <?= htmlspecialchars($usuario->getSenha()) ?></li>
+            <li class="list-group-item">Telefone: <?php echo htmlspecialchars($contato->getTelefone()) ?></li>
+            <li class="list-group-item">Email: <?= htmlspecialchars($contato->getEmail()) ?></li>
+            <li class="list-group-item">Endereço: <?= htmlspecialchars($contato->getEnderecoCep()) ?></li>
         </ul>
     </div>
 </body>

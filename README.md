@@ -33,3 +33,11 @@
   * [3. Validações e eliminando espaços](#)
   * [4. Validações com expressões regulares](#)
   * [5. Melhorando a segurança e fazendo substituições](#)
+
+- [Orientação a Objetos com PHP: Classes, métodos e atributos](#)
+  * [1. Problemas da programação procedural](#)
+  * [2. Introdução à Orientação a Objetos](#)
+  * [3. Definindo os comportamentos](#)
+  * [4. Protegendo os nossos dados](#)
+  * [5. Mais sobre métodos](#)
+  * [6. Composição de objetos](#)
