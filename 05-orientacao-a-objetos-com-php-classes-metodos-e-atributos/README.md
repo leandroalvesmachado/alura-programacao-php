@@ -20,9 +20,9 @@
 * [Quanto menos condicionais tivermos, mais natural e fácil se torna a leitura. A técnica Early Return ajuda bastante neste caso](#)
 
 ## Aula 04 - Protegendo os nossos dados
-* [](#)
-* [](#)
-* [](#)
+* [Que devemos encapsular os dados dos nossos objetos e expor apenas o necessário](#)
+* [Que o Encapsulamento é outro pilar da programação orientada a objetos](#)
+* [Os métodos acessores (getters e setters) e discutimos sobre a sua necessidade](#)
 
 ## Aula 05 - Mais sobre métodos
 * [](#)

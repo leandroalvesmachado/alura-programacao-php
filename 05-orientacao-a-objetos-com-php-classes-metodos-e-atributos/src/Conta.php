@@ -9,9 +9,17 @@ class Conta
     // somente a classe acessa seus atributos (private)
     private $cpfTitular;
     private $nomeTitular;
-    private $saldo = 0;
+    // private $saldo = 0;
+    private $saldo;
 
-    public function sacar(float $valorSacar): void
+    public function __construct(string $cpfTitular, string $nomeTitular)
+    {
+        $this->cpfTitular = $cpfTitular;
+        $this->nomeTitular = $nomeTitular;
+        $this->saldo = 0;
+    }
+
+    public function saca(float $valorSacar): void
     {
         if ($valorSacar > $this->saldo) {
             echo "Saldo indisponível";
@@ -21,7 +29,7 @@ class Conta
         $this->saldo -= $valorSacar;
     }
 
-    public function depositar(float $valorADepositar): void
+    public function deposita(float $valorADepositar): void
     {
         if ($valorADepositar < 0) {
             echo "Valor precisa ser positivo";
@@ -31,7 +39,7 @@ class Conta
         $this->saldo += $valorADepositar;
     }
 
-    public function transferir(float $valorATransferir, Conta $contaDestino): void
+    public function transfere(float $valorATransferir, Conta $contaDestino): void
     {
         if ($valorATransferir > $this->saldo) {
             echo "Saldo indisponível";
@@ -40,5 +48,30 @@ class Conta
 
         $this->sacar($valorATransferir);
         $contaDestino->depositar($valorATransferir);
+    }
+
+    public function recuperaSaldo(): float
+    {
+        return $this->saldo;
+    }
+
+    // public function defineCpfTitular(string $cpf): void
+    // {
+    //     $this->cpfTitular = $cpf;
+    // }
+
+    public function recuperaCpfTitular(): string
+    {
+        return $this->cpfTitular;
+    }
+
+    // public function defineNomeTitular(string $nome): void
+    // {
+    //     $this->nomeTitular = $nome;
+    // }
+
+    public function recuperaNomeTitular(): string
+    {
+        return $this->nomeTitular;
     }
 }
