@@ -7,16 +7,37 @@ class Conta
     // public $saldo = 0;
 
     // somente a classe acessa seus atributos (private)
-    private $cpfTitular;
-    private $nomeTitular;
+    // private $cpfTitular;
+    // private $nomeTitular;
     // private $saldo = 0;
-    private $saldo;
+    // private $saldo;
+    // public static $numeroDeContas = 0;
+    // private static $numeroDeContas = 0;
 
-    public function __construct(string $cpfTitular, string $nomeTitular)
+
+    // após a criação da classe titular
+    private $titular; // chamado de composição de objetos (vimos um objeto sendo formado por outro objeto)
+    // uma conta tem uma instância do titular
+    private $saldo;
+    private static $numeroDeContas = 0;
+
+    public function __construct(Titular $titular)
     {
-        $this->cpfTitular = $cpfTitular;
-        $this->nomeTitular = $nomeTitular;
+        $this->titular = $titular;
         $this->saldo = 0;
+
+        // Conta::$numeroDeContas++;
+
+        // self = chamando classe atual
+        self::$numeroDeContas++;
+    }
+
+    public function __destruct()
+    {
+        // if (self::$numeroDeContas > 2) {
+        //     echo "Há mais de uma conta ativa";
+        // }
+        self::$numeroDeContas--;
     }
 
     public function saca(float $valorSacar): void
@@ -55,23 +76,20 @@ class Conta
         return $this->saldo;
     }
 
-    // public function defineCpfTitular(string $cpf): void
-    // {
-    //     $this->cpfTitular = $cpf;
-    // }
+    public function recuperaNomeTitular(): string
+    {
+        return $this->titular->recuperaNome();
+    }
 
     public function recuperaCpfTitular(): string
     {
-        return $this->cpfTitular;
+        return $this->titular->recuperaCpf();
     }
 
-    // public function defineNomeTitular(string $nome): void
-    // {
-    //     $this->nomeTitular = $nome;
-    // }
 
-    public function recuperaNomeTitular(): string
+    public static function recuperaNumeroDeContas(): int
     {
-        return $this->nomeTitular;
+        // return Conta::$numeroDeContas;
+        return self::$numeroDeContas;
     }
 }

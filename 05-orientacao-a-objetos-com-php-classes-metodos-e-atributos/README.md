@@ -25,11 +25,14 @@
 * [Os métodos acessores (getters e setters) e discutimos sobre a sua necessidade](#)
 
 ## Aula 05 - Mais sobre métodos
-* [](#)
-* [](#)
-* [](#)
+* [Existem métodos no PHP que são executados em momentos específicos, e estes métodos são conhecidos como métodos mágicos](#)
+* [Ao criar uma instância, o método mágico construtor (__construct) é executado](#)
+* [Quando uma instância deixa de existir, seu método mágico destrutor (__destruct) é executado](#)
+* [Podemos ter métodos privados em nossas classes, que nos ajudam a organizar o código](#)
+* [Também podemos ter membros (atributos e métodos) da própria classe, e não de cada instância](#)
+* [Membros da classe são chamados de membros estáticos](#)
 
 ## Aula 06 - Composição de objetos
-* [](#)
-* [](#)
-* [](#)
+* [Uma classe deve ter apenas uma responsabilidade, deve ser concisa](#)
+* [É possível que um objeto tenha outro objeto como valor de um de seus atributos. Isto é chamado de composição](#)
+* [A composição pode (e deve) ser utilizada ao definir uma estrutura complexa de classes](#)

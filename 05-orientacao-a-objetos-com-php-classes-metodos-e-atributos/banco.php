@@ -1,18 +1,22 @@
 <?php
 
 require_once 'src/Conta.php';
+require_once 'src/Titular.php';
+require_once 'src/Cpf.php';
 
-$primeiraConta = new Conta('123.456.789-10', 'Leandro Machado');
+$vinicius = new Titular(new Cpf('123.456.789-10'), 'Vinicius Dias');
+$primeiraConta = new Conta($vinicius);
+$primeiraConta->deposita(500);
+$primeiraConta->saca(300); // isso é ok
 
-var_dump($primeiraConta);
+echo $primeiraConta->recuperaNomeTitular() . PHP_EOL;
+echo $primeiraConta->recuperaCpfTitular() . PHP_EOL;
+echo $primeiraConta->recuperaSaldo() . PHP_EOL;
 
-$primeiraConta->saca(300);
+$patricia = new Titular(new Cpf('698.549.548-10'), 'Patricia');
+$segundaConta = new Conta($patricia);
+var_dump($segundaConta);
 
-// Não funciona, Fatal error:  Uncaught Error: Cannot access private property Conta::$saldo
-// atributo private
-// $primeiraConta->saldo -= 300;
-
-$primeiraConta->defineCpfTitular('123.456.789-10');
-
-echo $primeiraConta->recuperaSaldo();
-echo $primeiraConta->recuperaCpfTitular();
+$outra = new Conta(new Titular(new Cpf('123.654.789-01'), 'Abcdefg'));
+unset($segundaConta);
+echo Conta::recuperaNumeroDeContas();
