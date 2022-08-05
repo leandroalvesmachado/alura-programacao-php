@@ -41,3 +41,11 @@
   * [4. Protegendo os nossos dados](#)
   * [5. Mais sobre métodos](#)
   * [6. Composição de objetos](#)
+
+- [Avançando com Orientação a Objetos com PHP: Herança, Polimorfismo e Interfaces](#)
+  * [1. Herança](#)
+  * [2. Namespace e Autoload](#)
+  * [3. Classes e métodos abstratos](#)
+  * [4. Polimorfismos](#)
+  * [5. Interfaces](#)
+  * [6. Métodos mágicos](#)
