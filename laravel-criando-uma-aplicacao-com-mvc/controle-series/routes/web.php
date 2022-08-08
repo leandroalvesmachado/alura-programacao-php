@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\SeriesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +22,6 @@ Route::get('/', function () {
 Route::get('/ola', function () {
     echo 'Ola mundo';
 });
+
+Route::get('/series', [SeriesController::class, 'index']);
+Route::get('/series/criar', [SeriesController::class, 'create']);
