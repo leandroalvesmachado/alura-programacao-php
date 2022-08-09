@@ -24,7 +24,7 @@
 * [Utilizamos o Laravel Mix para instalar e configurar o bootstrap](#)
   
 ## Aula 05 - Models
-* [](#)
-* [](#)
-* [](#)
-* [](#)
+* [Conhecemos o conceito de “model” no Laravel](#)
+* [Aprendemos sobre Migrations do banco de dados](#)
+* [Vimos como executar queries através da Facade DB](#)
+* [Conhecemos o Eloquent ORM](#)
