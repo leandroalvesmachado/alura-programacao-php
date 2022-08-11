@@ -17,4 +17,9 @@ class Serie extends Model
      * @var array
      */
     protected $fillable = ['nome'];
+
+    public function temporadas()
+    {
+        return $this->hasMany(Season::class);
+    }
 }

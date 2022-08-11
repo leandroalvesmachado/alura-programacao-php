@@ -28,9 +28,14 @@ Route::get('/ola', function () {
 // Route::post('/series/salvar', [SeriesController::class, 'store']);
 // ou
 Route::controller(SeriesController::class)->group(function () {
-    Route::get('/series', 'index');
-    Route::get('/series/criar', 'create');
-    Route::post('/series/salvar', 'store');
+    Route::get('/series', 'index')->name('series.index');
+    Route::get('/series/criar', 'create')->name('series.create');
+    Route::post('/series/salvar', 'store')->name('series.store');
+    Route::get('/series/{serie}/editar', 'edit')->name('series.edit');
+    Route::put('/series/{serie}', 'update')->name('series.update');
+    Route::delete('/series/destroy/{serie}', 'destroy')->name('series.destroy');
 });
 // ou
 // Route::resource('series', SeriesController::class);
+// ou
+// Route::resource(name:'/series',controller:SeriesController::class)->only(['index', 'create', 'store']);

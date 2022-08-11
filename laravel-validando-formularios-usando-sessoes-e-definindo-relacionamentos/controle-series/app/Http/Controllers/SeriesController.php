@@ -7,17 +7,23 @@ use App\Models\Serie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use App\Http\Requests\SeriesFormRequest;
+
 class SeriesController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // $series = DB::select("SELECT nome FROM series;");
         // $series = Serie::all();
         $series = Serie::query()->orderBy('nome')->get();
 
+        // $mensagemSucesso = $request->session()->get('mensagem.sucesso');
+        // ou
+        $mensagemSucesso = session('mensagem.sucesso');
+
         return view('series.index', [
             'series' => $series
-        ]);
+        ])->with('mensagemSucesso', $mensagemSucesso);
     }
 
     public function create()
@@ -25,7 +31,7 @@ class SeriesController extends Controller
         return view('series.create');
     }
 
-    public function store(Request $request)
+    public function store(SeriesFormRequest $request)
     {
         // $nomeSerie = $request->input('nome');
         // ou
@@ -40,8 +46,41 @@ class SeriesController extends Controller
         // $serie->save();
         // ou
         // request->all() todos, request->only() apenas, request->except(['_token'])
-        Serie::create($request->all());
+        $serie = Serie::create($request->all());
 
-        return redirect('/series');
+        $request->session()->flash('mensagem.sucesso', "Série {$serie->nome} adicionada com sucesso.");
+
+        // return redirect('/series');
+        // ou
+        // return redirect()->route('series.index');
+        // ou laravel 9
+        return to_route('series.index');
+    }
+
+    public function edit(Serie $serie)
+    {
+        return view('series.edit')->with('serie', $serie);
+    }
+
+    public function update(SeriesFormRequest $request, Serie $serie)
+    {
+        $serie->fill($request->all());
+        $serie->save();
+
+        return to_route('series.index')
+            ->with('mensagem.sucesso', "Série {$serie->nome} atualizada com sucesso");;
+    }
+
+    public function destroy(Serie $serie)
+    {
+        // Serie::destroy($id);
+        // ou
+        $serie->delete();
+
+        // $request->session()->flash('mensagem.sucesso', "Série {$serie->nome} removida com sucesso");
+        // return to_route('series.index');
+        // ou, with não precisa do Request injetado
+        return to_route('series.index')
+            ->with('mensagem.sucesso', "Série {$serie->nome} removida com sucesso");
     }
 }

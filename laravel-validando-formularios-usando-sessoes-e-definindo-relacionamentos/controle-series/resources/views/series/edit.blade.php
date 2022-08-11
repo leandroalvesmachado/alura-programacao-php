@@ -1,5 +1,5 @@
-<x-layout title="Nova série">
-    <h1>Nova série</h1>
+<x-layout title="Editar série {{ $serie->nome }}">
+    <h1>Editar série</h1>
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -9,5 +9,5 @@
         </ul>
     </div>
     @endif
-    <x-series.form :action="route('series.store')" />
+    <x-series.form :action="route('series.update', $serie->id)" :nome="$serie->nome" />
 </x-layout>
