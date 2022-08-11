@@ -19,13 +19,14 @@
 * [Vimos como traduzir as mensagens de erro](#)
 
 ## Aula 04 - Relacionamentos
-* [](#)
-* [](#)
-* [](#)
-* [](#)
+* [Aprendemos sobre os tipos de relacionamentos do Eloquent](#)
+* [Criamos os relacionamentos de nossas models](#)
+* [Aprendemos a utilizar escopos](#)
+* [Conhecemos o conceito de eager loading com Eloquent](#)
   
 ## Aula 05 - Criando os episódios
 * [](#)
 * [](#)
 * [](#)
 * [](#)
+* [Recria todas as tabelas: php artisan migrate:fresh](#)

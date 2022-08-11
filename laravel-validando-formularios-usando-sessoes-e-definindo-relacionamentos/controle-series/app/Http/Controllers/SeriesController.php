@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Serie;
+use App\Models\Series;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +15,8 @@ class SeriesController extends Controller
     {
         // $series = DB::select("SELECT nome FROM series;");
         // $series = Serie::all();
-        $series = Serie::query()->orderBy('nome')->get();
+        $series = Series::query()->orderBy('nome')->get();
+        // Ex: Acessando scope, Serie::active();
 
         // $mensagemSucesso = $request->session()->get('mensagem.sucesso');
         // ou
@@ -46,7 +47,7 @@ class SeriesController extends Controller
         // $serie->save();
         // ou
         // request->all() todos, request->only() apenas, request->except(['_token'])
-        $serie = Serie::create($request->all());
+        $serie = Series::create($request->all());
 
         $request->session()->flash('mensagem.sucesso', "Série {$serie->nome} adicionada com sucesso.");
 
@@ -57,12 +58,12 @@ class SeriesController extends Controller
         return to_route('series.index');
     }
 
-    public function edit(Serie $serie)
+    public function edit(Series $serie)
     {
         return view('series.edit')->with('serie', $serie);
     }
 
-    public function update(SeriesFormRequest $request, Serie $serie)
+    public function update(SeriesFormRequest $request, Series $serie)
     {
         $serie->fill($request->all());
         $serie->save();
@@ -71,7 +72,7 @@ class SeriesController extends Controller
             ->with('mensagem.sucesso', "Série {$serie->nome} atualizada com sucesso");;
     }
 
-    public function destroy(Serie $serie)
+    public function destroy(Series $serie)
     {
         // Serie::destroy($id);
         // ou
