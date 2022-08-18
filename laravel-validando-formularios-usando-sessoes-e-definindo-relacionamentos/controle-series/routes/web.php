@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SeriesController;
+use App\Http\Controllers\SeasonsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,5 @@ Route::controller(SeriesController::class)->group(function () {
 // Route::resource('series', SeriesController::class);
 // ou
 // Route::resource(name:'/series',controller:SeriesController::class)->only(['index', 'create', 'store']);
+
+Route::get('/series/{series}/seasons', [SeasonsController::class, 'index'])->name('seasons.index');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Series;
+use App\Models\Season;
+use App\Models\Episode;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -48,14 +50,38 @@ class SeriesController extends Controller
         // ou
         // request->all() todos, request->only() apenas, request->except(['_token'])
         $serie = Series::create($request->all());
+        $seasons = [];
+        $episodes = [];
 
-        $request->session()->flash('mensagem.sucesso', "Série {$serie->nome} adicionada com sucesso.");
+        for ($i = 1; $i < $request->seasonsQty ; $i++) { 
+            $seasons[] = [
+                'series_id' => $serie->id,
+                'number' => $i
+            ];
+        }
+
+        // insere o array todo
+        Season::insert($seasons);
+
+        foreach ($serie->seasons as $season) {
+            for ($j = 1; $j < $request->episodesPerSeason; $j++) {
+                $episodes[] = [
+                    'season_id' => $season->id,
+                    'number' => $j
+                ];
+            }
+        }
+
+        Episode::insert($episodes);
+
+        // $request->session()->flash('mensagem.sucesso', "Série {$serie->nome} adicionada com sucesso.");
 
         // return redirect('/series');
         // ou
         // return redirect()->route('series.index');
         // ou laravel 9
-        return to_route('series.index');
+        return to_route('series.index')
+            ->with('mensagem.sucesso', "Série {$serie->nome} adicionada com sucesso.");
     }
 
     public function edit(Series $serie)
