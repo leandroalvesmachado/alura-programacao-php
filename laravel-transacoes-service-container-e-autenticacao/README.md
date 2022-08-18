@@ -11,10 +11,10 @@
 * [Criamos nosso primeiro service provider](#)
 
 ## Aula 03 - Assistindo episódios
-* [](#)
-* [](#)
-* [](#)
-* [](#)
+* [Praticamos vários conhecimentos ao implementar a funcionalidade de assistir episódios](#)
+* [Vimos como definir um valor padrão para uma coluna em uma migration](#)
+* [Conhecemos os métodos each das coleções e push das models do Eloquent](#)
+* [Utilizamos um escopo para buscar os episódios assistidos, depois otimizamos isso usando as coleções](#)
 
 ## Aula 04 - Autenticação
 * [](#)
