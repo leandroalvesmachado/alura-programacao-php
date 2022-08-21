@@ -17,10 +17,10 @@
 * [Utilizamos um escopo para buscar os episódios assistidos, depois otimizamos isso usando as coleções](#)
 
 ## Aula 04 - Autenticação
-* [](#)
-* [](#)
-* [](#)
-* [](#)
+* [Entendemos o que é e criamos um middleware](#)
+* [Definimos nossas regras para realizar login](#)
+* [Criamos o cadastro de usuário](#)
+* [Implementamos um logout](#)
   
 ## Aula 05 - Verificações do usuário
 * [](#)
