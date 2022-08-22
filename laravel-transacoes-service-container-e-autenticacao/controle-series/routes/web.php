@@ -18,12 +18,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return redirect('/series');
+// })->middleware(\App\Http\Middleware\Autenticador::class);
+// ou
 Route::get('/', function () {
     return redirect('/series');
-})->middleware(\App\Http\Middleware\Autenticador::class);
+})->middleware('autenticador');
 
 Route::resource('/series', SeriesController::class)
     ->except(['show']);
+// series com autenticador
+Route::middleware('autenticador')->group(function() {
+    Route::get('/', function () {
+        return redirect('/series');
+    });
+    
+    Route::get('/series/{series}/seasons',[SeasonsController::class, 'index'])->name('seasons.index');
+    Route::get('/seasons/{season}/episodes', [EpisodesController::class, 'index'])->name('episodes.index');
+    Route::post('/seasons/{season}/episodes',[EpisodesController::class, 'update'])->name('episodes.update');
+});
 
 Route::get('/series/{series}/seasons', [SeasonsController::class, 'index'])->name('seasons.index');
 

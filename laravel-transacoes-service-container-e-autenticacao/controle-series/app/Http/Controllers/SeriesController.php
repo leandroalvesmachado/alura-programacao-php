@@ -9,11 +9,14 @@ use App\Models\Series;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Repositories\SeriesRepository;
+use App\Http\Middleware\Autenticador;
 
 class SeriesController extends Controller
 {
     public function __construct(private SeriesRepository $repository)
     {
+        // aplicando middleware em todos os métodos do controller
+        $this->middleware(Autenticador::class)->except('index');
     }
 
     public function index(Request $request)

@@ -23,7 +23,6 @@
 * [Implementamos um logout](#)
   
 ## Aula 05 - Verificações do usuário
-* [](#)
-* [](#)
-* [](#)
-* [](#)
+* [Restringimos acesso a detalhes da view apenas a usuários logados](#)
+* [Vimos como agrupar nossas rotas](#)
+* [Conhecemos e instalamos o Breeze](#)
