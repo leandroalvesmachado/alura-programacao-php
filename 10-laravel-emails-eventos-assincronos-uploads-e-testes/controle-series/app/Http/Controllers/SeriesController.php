@@ -54,7 +54,10 @@ class SeriesController extends Controller
             // $email->subject = 'Nova série criada';
 
             // Mail::to($request->user())->send($email);
-            Mail::to($user)->send($email);
+            // Mail::to($user)->send($email);
+            
+            // usando filas para o envio de emails (sincronas)
+            Mail::to($user)->queue($email);
         }
 
         return to_route('series.index')
