@@ -40,25 +40,49 @@ class SeriesController extends Controller
     {
         $serie = $this->repository->add($request);
 
-        $userList = User::all();
+        // $userList = User::all();
 
-        foreach ($userList as $user) {
-            // usuario logado = $request->user()
-            // ou Auth::user()
-            $email = new SeriesCreated(
-                $serie->nome,
-                $serie->id,
-                $request->seasonsQty,
-                $request->episodesPerSeason,
-            );
-            // $email->subject = 'Nova série criada';
+        // foreach ($userList as $index => $user) {
+        //     // usuario logado = $request->user()
+        //     // ou Auth::user()
+        //     $email = new SeriesCreated(
+        //         $serie->nome,
+        //         $serie->id,
+        //         $request->seasonsQty,
+        //         $request->episodesPerSeason,
+        //     );
+        //     // $email->subject = 'Nova série criada';
 
-            // Mail::to($request->user())->send($email);
-            // Mail::to($user)->send($email);
+        //     // Mail::to($request->user())->send($email);
+        //     // Mail::to($user)->send($email);
             
-            // usando filas para o envio de emails (sincronas)
-            Mail::to($user)->queue($email);
-        }
+        //     // usando filas para o envio de emails (sincronas)
+        //     // Mail::to($user)->queue($email);
+
+        //     // $now = new \DateTime();
+        //     // $now->modify($index * 2 .' seconds');
+
+        //     $when = now()->addSeconds($index * 5);
+        //     Mail::to($user)->later($when, $email);
+        // }
+
+        // emitindo evento
+        // $seriesCreatedEvent = new \App\Events\SeriesCreated(
+        //     $serie->nome,
+        //     $serie->id,
+        //     $request->seasonsQty,
+        //     $request->episodesPerSeason,
+        // );
+
+        // event($seriesCreatedEvent);
+
+        // outra forma 
+        \App\Events\SeriesCreated::dispatch(
+            $serie->nome,
+            $serie->id,
+            $request->seasonsQty,
+            $request->episodesPerSeason,
+        );
 
         return to_route('series.index')
             ->with('mensagem.sucesso', "Série '{$serie->nome}' adicionada com sucesso");
