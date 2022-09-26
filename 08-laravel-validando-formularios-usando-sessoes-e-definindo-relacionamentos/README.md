@@ -25,8 +25,8 @@
 * [Conhecemos o conceito de eager loading com Eloquent](#)
   
 ## Aula 05 - Criando os episódios
-* [](#)
-* [](#)
-* [](#)
-* [](#)
+* [Vimos como uma debugbar pode nos ajudar a depurar a aplicação](#)
+* [Aprendemos a otimizar nossa aplicação com Bulk Insert](#)
+* [Usamos eager loading para exibir as temporadas com seus episódios](#)
+
 * [Recria todas as tabelas: php artisan migrate:fresh](#)

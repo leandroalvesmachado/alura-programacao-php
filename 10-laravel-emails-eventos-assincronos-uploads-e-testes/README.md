@@ -13,14 +13,14 @@
 * [Entendemos como definir o horário de execução de um processo](#)
 
 ## Aula 03 - Eventos
-* [](#)
-* [](#)
-* [](#)
+* [Aprendemos a trabalhar com eventos](#)
+* [Entendemos as vantagens de separar nosso código em event listeners](#)
+* [Vimos como trabalhar com eventos de forma síncrona e assíncrona](#)
 
 ## Aula 04 - Uploads
-* [](#)
-* [](#)
-* [](#)
+* [Aprendemos a enviar arquivos pelo formulário](#)
+* [Vimos como manipular arquivos de upload com storage do Laravel](#)
+* [Aprendemos a disponibilizar os arquivos do storage de forma pública](#)
 
 ## Aula 05 - Testes
 * [](#)

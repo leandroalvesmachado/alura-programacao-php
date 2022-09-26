@@ -11,7 +11,7 @@ use App\Models\User;
 
 use App\Events\SeriesCreated as SeriesCreatedEvent;
 
-class EmailUsersAboutSeriesCreated
+class EmailUsersAboutSeriesCreated implements ShouldQueue
 {
     /**
      * Create the event listener.
